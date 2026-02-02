@@ -1,0 +1,15 @@
+# MatriPixel AI - Training Dependencies
+# Install with: pip install -r requirements.txt
+
+tensorflow>=2.13.0
+numpy>=1.24.0
+Pillow>=10.0.0
+matplotlib>=3.7.0
+scikit-learn>=1.3.0
+
+# For TFLite metadata (optional but recommended)
+tflite-support>=0.4.4
+
+# For experiment tracking (optional)
+# tensorboard>=2.13.0
+# wandb>=0.15.0
