@@ -101,7 +101,8 @@ fun CaptureScreen(
                     cameraProviderFuture.addListener({
                         val cameraProvider = cameraProviderFuture.get()
                         
-                        val preview = CameraPreview.Builder().build()
+                        val preview = CameraPreview.Builder()
+                            .build()
                         preview.setSurfaceProvider(previewView.surfaceProvider)
                         
                         val imgCapture = ImageCapture.Builder()
