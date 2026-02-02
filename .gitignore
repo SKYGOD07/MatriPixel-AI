@@ -1,0 +1,36 @@
+# Android/Gradle/Kotlin .gitignore
+.gradle/
+build/
+app/build/
+android/build/
+captures/
+.externalNativeBuild/
+.cxx/
+local.properties
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Training / ML data (if large/sensitive)
+training/data/
+*.tflite
+!app/src/main/assets/ml/*.tflite
+
+# Custom project logs/temp files
+*_log.txt
+*_errors.txt
+build_info.txt
+build_retry.txt
+build_standardized.txt
+build_output_clean.txt
+gradle_output.txt
+
+# VS Code
+.vscode/
+
+# OS generated
+.DS_Store
+Thumbs.db
