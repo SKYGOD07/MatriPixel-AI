@@ -99,25 +99,25 @@ fun CaptureScreen(
                     
                     val cameraProviderFuture = ProcessCameraProvider.getInstance(ctx)
                     cameraProviderFuture.addListener({
-                        val cameraProvider = cameraProviderFuture.get()
-                        
-                        val preview = CameraPreview.Builder()
-                            .build()
-                        preview.setSurfaceProvider(previewView.surfaceProvider)
-                        
-                        val imgCapture = ImageCapture.Builder()
-                            .setCaptureMode(ImageCapture.CAPTURE_MODE_MAXIMIZE_QUALITY)
-                            .setFlashMode(
-                                if (isFlashEnabled) ImageCapture.FLASH_MODE_ON 
-                                else ImageCapture.FLASH_MODE_OFF
-                            )
-                            .build()
-                        
-                        imageCapture = imgCapture
-                        
-                        val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
-                        
                         try {
+                            val cameraProvider = cameraProviderFuture.get()
+                            
+                            val preview = CameraPreview.Builder()
+                                .build()
+                            preview.setSurfaceProvider(previewView.surfaceProvider)
+                            
+                            val imgCapture = ImageCapture.Builder()
+                                .setCaptureMode(ImageCapture.CAPTURE_MODE_MAXIMIZE_QUALITY)
+                                .setFlashMode(
+                                    if (isFlashEnabled) ImageCapture.FLASH_MODE_ON 
+                                    else ImageCapture.FLASH_MODE_OFF
+                                )
+                                .build()
+                            
+                            imageCapture = imgCapture
+                            
+                            val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
+                            
                             cameraProvider.unbindAll()
                             cameraProvider.bindToLifecycle(
                                 lifecycleOwner,
