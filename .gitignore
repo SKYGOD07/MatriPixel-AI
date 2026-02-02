@@ -27,6 +27,8 @@ build_retry.txt
 build_standardized.txt
 build_output_clean.txt
 gradle_output.txt
+build_local_*.txt
+compile_debug*.txt
 
 # VS Code
 .vscode/
