@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">MatriPixel AI</string>
+    <string name="welcome_title">Anemia Detection</string>
+    <string name="welcome_subtitle">Offline-First • Privacy-Preserving</string>
+    
+    <!-- Home Screen -->
+    <string name="start_scan">Start New Scan</string>
+    <string name="view_history">View History</string>
+    <string name="offline_mode">Offline Mode Active</string>
+    <string name="online_mode">Connected</string>
+    
+    <!-- Patient Form -->
+    <string name="patient_details">Patient Details</string>
+    <string name="patient_name">Patient Name (Optional)</string>
+    <string name="patient_age">Age</string>
+    <string name="patient_gender">Gender</string>
+    <string name="select_gender">Select Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="other">Other</string>
+    
+    <!-- Vitals -->
+    <string name="vitals_section">Vitals &amp; Symptoms</string>
+    <string name="fatigue_level">Fatigue Level (1–10)</string>
+    <string name="shortness_of_breath">Shortness of Breath</string>
+    <string name="known_hemoglobin">Known Hemoglobin (g/dL)</string>
+    <string name="optional">Optional</string>
+    
+    <!-- Camera -->
+    <string name="camera_instruction_eye">Position lower eyelid in the frame</string>
+    <string name="camera_instruction_nail">Position nail bed in the frame</string>
+    <string name="capture_image">Capture Image</string>
+    <string name="retake">Retake</string>
+    <string name="analyze">Analyze</string>
+    <string name="camera_permission_required">Camera permission is required</string>
+    
+    <!-- Results -->
+    <string name="results_title">Analysis Results</string>
+    <string name="risk_level">Risk Level</string>
+    <string name="risk_high">HIGH RISK</string>
+    <string name="risk_moderate">MODERATE RISK</string>
+    <string name="risk_low">LOW RISK</string>
+    <string name="confidence_score">Confidence Score</string>
+    <string name="recommendation_high">Immediate medical consultation recommended</string>
+    <string name="recommendation_moderate">Consider scheduling a blood test</string>
+    <string name="recommendation_low">No immediate concern detected</string>
+    <string name="save_result">Save Result</string>
+    <string name="new_scan">New Scan</string>
+    
+    <!-- Sync -->
+    <string name="pending_sync">Pending Sync: %d results</string>
+    <string name="last_synced">Last Synced: %s</string>
+    <string name="sync_now">Sync Now</string>
+    
+    <!-- Errors -->
+    <string name="error_camera_init">Failed to initialize camera</string>
+    <string name="error_analysis_failed">Analysis failed. Please try again.</string>
+    <string name="error_save_failed">Failed to save result</string>
+</resources>

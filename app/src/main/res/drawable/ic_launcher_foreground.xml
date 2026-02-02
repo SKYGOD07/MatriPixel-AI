@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Medical Teal Circle Background -->
+    <path
+        android:fillColor="#0D9488"
+        android:pathData="M54,54m-40,0a40,40 0,1 1,80 0a40,40 0,1 1,-80 0"/>
+    <!-- Eye Symbol -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,38c-13.2,0 -24,7.2 -24,16s10.8,16 24,16s24,-7.2 24,-16S67.2,38 54,38zM54,62c-4.4,0 -8,-3.6 -8,-8s3.6,-8 8,-8s8,3.6 8,8S58.4,62 54,62z"/>
+    <!-- Pupil -->
+    <path
+        android:fillColor="#0D9488"
+        android:pathData="M54,50c-2.2,0 -4,1.8 -4,4s1.8,4 4,4s4,-1.8 4,-4S56.2,50 54,50z"/>
+    <!-- AI Sparkle -->
+    <path
+        android:fillColor="#FFD700"
+        android:pathData="M70,30l2,4l4,2l-4,2l-2,4l-2,-4l-4,-2l4,-2z"/>
+</vector>
