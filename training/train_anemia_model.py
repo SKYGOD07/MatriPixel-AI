@@ -389,18 +389,40 @@ def evaluate_model(model: keras.Model, validation_generator):
     print("\n📈 Evaluating model...")
     results = model.evaluate(validation_generator, verbose=1)
     
-    metrics = dict(zip(model.metrics_names, results))
+    # Keras 3 / TensorFlow 2.16+ might prefix metric names
+    metrics = {}
+    for i, name in enumerate(model.metrics_names):
+        val = results[i]
+        metrics[name] = val
+        # Map common variations to standard names for the display logic
+        name_lower = name.lower()
+        if 'accuracy' in name_lower or name_lower == 'acc':
+            metrics['accuracy'] = val
+        elif 'precision' in name_lower:
+            metrics['precision'] = val
+        elif 'recall' in name_lower:
+            metrics['recall'] = val
+        elif 'auc' in name_lower:
+            metrics['auc'] = val
+    
+    # Fallback defaults
+    display_metrics = {
+        'loss': metrics.get('loss', results[0]),
+        'accuracy': metrics.get('accuracy', 0.0),
+        'precision': metrics.get('precision', 0.0),
+        'recall': metrics.get('recall', 0.0),
+        'auc': metrics.get('auc', 0.0)
+    }
     
     print("\n📊 Final Metrics:")
-    print(f"   Loss:      {metrics['loss']:.4f}")
-    print(f"   Accuracy:  {metrics['accuracy']:.4f}")
-    print(f"   Precision: {metrics['precision']:.4f}")
-    print(f"   Recall:    {metrics['recall']:.4f}")
-    print(f"   AUC:       {metrics['auc']:.4f}")
+    for key, val in display_metrics.items():
+        print(f"   {key.capitalize():<10}: {val:.4f}")
     
     # Calculate F1 score
-    if metrics['precision'] + metrics['recall'] > 0:
-        f1 = 2 * (metrics['precision'] * metrics['recall']) / (metrics['precision'] + metrics['recall'])
+    p = display_metrics['precision']
+    r = display_metrics['recall']
+    if p + r > 0:
+        f1 = 2 * (p * r) / (p + r)
         print(f"   F1 Score:  {f1:.4f}")
     
     return metrics

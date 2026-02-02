@@ -1,0 +1,41 @@
+{
+  "name": "Anemia Detector",
+  "description": "Detects anemia from eye conjunctiva images",
+  "version": "1.0.0",
+  "author": "MatriPixel AI",
+  "input": {
+    "name": "input_image",
+    "shape": [
+      1,
+      224,
+      224,
+      3
+    ],
+    "type": "float32",
+    "normalization": {
+      "mean": [
+        127.5,
+        127.5,
+        127.5
+      ],
+      "std": [
+        127.5,
+        127.5,
+        127.5
+      ]
+    }
+  },
+  "output": {
+    "name": "anemia_probability",
+    "shape": [
+      1,
+      1
+    ],
+    "type": "float32",
+    "labels": [
+      "Non-Anemic",
+      "Anemic"
+    ],
+    "threshold": 0.5
+  }
+}
