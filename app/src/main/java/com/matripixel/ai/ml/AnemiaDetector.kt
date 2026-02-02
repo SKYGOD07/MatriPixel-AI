@@ -96,7 +96,7 @@ class AnemiaDetector(private val context: Context) {
             runModelInference(bitmap)
         } else {
             // Fallback to heuristic analysis
-            runHeuristicAnalysis(colorAnalysis, vitals)
+            runHeuristicAnalysis(colorAnalysis)
         }
         
         // Adjust score based on vitals if available
@@ -164,8 +164,7 @@ class AnemiaDetector(private val context: Context) {
      * Based on color-based pallor detection research
      */
     private fun runHeuristicAnalysis(
-        colorAnalysis: ColorAnalysis,
-        vitals: Vitals?
+        colorAnalysis: ColorAnalysis
     ): Pair<Float, Float> {
         // Base score from pallor index (higher pallor = higher risk)
         var riskScore = colorAnalysis.pallorIndex
